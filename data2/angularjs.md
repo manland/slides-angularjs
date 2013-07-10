@@ -83,6 +83,17 @@ Non testable, non maintenable...
 
 !SLIDE =================
 
+# Compiler du java vers JS/HTML/CSS
+# WTF !?
+
+!SLIDE =================
+
+# Compiler du java vers JS/HTML/CSS
+# JS est interprété !
+# Un F5 devrait suffir !
+
+!SLIDE =================
+
 # Dispeau map
 
 ![](img/dispeau-map.png)
@@ -200,6 +211,10 @@ AngularJs == par les tests == pour les tests
 
 !SLIDE =================
 
+# Défits
+
+!SLIDE =================
+
 # Transfert des données
 
 ![](img/RequestChange.png)
@@ -235,6 +250,8 @@ SublimeText, WebStorm, Brackets...
 
 * Vue plus facile (pas d'interface pour le css O_o)
 * tests clients intégré
+* découplage complet client/serveur
+* serveur REST réutilisable (application mobile, native...)
 
 !SLIDE bullets =================
 
