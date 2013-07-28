@@ -27,7 +27,7 @@ Plan :
 
 # GWT
 
-"La meilleurs réalisation technique, de la plus mauvaise idée !"
+"La meilleure réalisation technique, de la plus mauvaise idée !"
 
 !SLIDE ============================
 
@@ -67,7 +67,7 @@ JS ça permet de faire des étoiles derrière la souris
 
 ![](img/opinionated.gif)
 
-Chaque navigateur à sa propre implémentation
+Chaque navigateur a sa propre implémentation
 
 !SLIDE =================
 
@@ -125,7 +125,7 @@ Non testable, non maintenable...
 
 ![](img/1bhh1.gif)
 
-Et si on prennait un tank pour tuer une mouche ?
+Et si on prenait un tank pour tuer une mouche ?
 
 !SLIDE =================
 
@@ -163,7 +163,7 @@ Your name: <input ng-model="me" name="name" autocomplete="off" style="font-size:
 
 * Modèle --> json
 * View.xml --> HTML/CSS
-* ViewImpl --> Controller
+* ViewImpl --> Contôleur
 * Activity --> Service
 
 !SLIDE =================
@@ -198,7 +198,7 @@ Your name: <input ng-model="me" name="name" autocomplete="off" style="font-size:
 # Tests
 
 * "La plupart des bugs viennent du client" <i>Cuong</i>
-* "Tester les dao, puis les services côté serveur" <i>Bastien & Nelly</i>
+* "Tester les DAOs, puis les services côté serveur" <i>Bastien & Nelly</i>
 * "Tester du java pour finalement jouer du js n'a pas de sens" <i>votre serviteur</i>
 
 !SLIDE =================
@@ -211,7 +211,7 @@ AngularJs == par les tests == pour les tests
 
 !SLIDE =================
 
-# Défits
+# Défis
 
 !SLIDE =================
 
@@ -249,13 +249,13 @@ SublimeText, WebStorm, Brackets...
 # Mais on y gagne...
 
 * Vue plus facile (pas d'interface pour le css O_o)
-* tests clients intégré
+* tests client intégrés
 * découplage complet client/serveur
 * serveur REST réutilisable (application mobile, native...)
 
 !SLIDE bullets =================
 
-* laurent peu faire beaucoup plus de choses
+* laurent peut faire beaucoup plus de choses
 
 ![](img/directiveDateTimeBefore.png)
 
