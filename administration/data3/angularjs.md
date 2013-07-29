@@ -63,31 +63,47 @@ Plan :
 
 ### 4P : tout en java
 
-!!!!!!!!!!!!!!  Screen du code   !!!!!!!!!!!!!!
-!!!!!!!!!!!!!! Screen de l'appli !!!!!!!!!!!!!!
-!!!!!!!!!!!!!! Screen de l'html généré !!!!!!!!!!!!!!
+![](img/4PView.png)
+
+!SLIDE =================
+
+### 4P : tout en java
+
+![](img/4PCode.png)
+
+!SLIDE =================
+
+### 4P : tout en java
+
+![](img/4PGenerated.png)
+
 
 !SLIDE =================
 
 ### Préco : nouvelle façon, mais mal utilisé
 
-!!!!!!!!!!!!!!  Screen du code HorizontalPanel   !!!!!!!!!!!!!!
-!!!!!!!!!!!!!! Screen de l'appli !!!!!!!!!!!!!!
-!!!!!!!!!!!!!! Screen de l'html généré !!!!!!!!!!!!!!
+![](img/PrecoCode.png)
 
 !SLIDE =================
 
+### Préco : nouvelle façon, mais mal utilisé
+
+![](img/PrecoGenerated.png)
+
+!SLIDE bullets =================
+
 ### Dispeau : ça change tout
 
-!!!!!!!!!!!!!!  Screen du code   !!!!!!!!!!!!!!
-!!!!!!!!!!!!!! Screen de l'appli !!!!!!!!!!!!!!
-!!!!!!!!!!!!!! Screen de l'html généré !!!!!!!!!!!!!!
+* Besoin de réactivité
+* Le client devient aussi important que le serveur
+* Responsive pour les tablettes
+* GWT ne nous aide pas, mais c'est possible...
 
 !SLIDE bullets =====================
 
 # Mais alors, pourquoi changer ?
 
-* Le JS natif se standardise
+* Le JS se standardise
 * Les librairies JS prennent le relai (quand il faut)
 
 !SLIDE bullets =====================
