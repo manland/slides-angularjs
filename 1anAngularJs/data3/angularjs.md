@@ -152,6 +152,21 @@ Oups où sont les tests ?
 
 !SLIDE bullets ============================
 
+#Industrialisation
+
+* Nomenclature
+```javascript
+function() {
+  function private() {}
+
+  return {
+    public: function() {private()}
+}
+```
+* Patterns
+
+!SLIDE bullets ============================
+
 #Conseils 1/2
 
 * manipuler le model et non la vue
@@ -162,7 +177,7 @@ Oups où sont les tests ?
 
 #Conseils 2/2
 
-* bien s'outiller (bower, karma...)
+* bien s'outiller (bower, karma, travis...)
 * ne pas hésiter à demander des conseils (frangular, monptellierjs...)
 
 !SLIDE =================
