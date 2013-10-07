@@ -67,6 +67,19 @@ Mais quel framework JS choisir ?
 </table>
 </center>
 
+!SLIDE bullets ============================
+
+#Définitions
+
+<i>Pour les newbies !</i>
+
+!SLIDE bullets ============================
+
+* view = fichier html
+* controller = fichier js controllant la vue
+* service = fichier js, partagé entre plusieurs controllers/services
+* directive = fichier js, permettant d'écrire de nouvelles balises html
+
 !SLIDE ============================
 
 #Décembre 2012 - 1er code
@@ -79,7 +92,7 @@ Mais quel framework JS choisir ?
 * 1 controller
 * 1 service
 
-#1500 lignes de codes
+#1500 lignes de code
 
 <i>* Ce slide est sûrement un peu exagéré</i>
 
@@ -99,7 +112,7 @@ Tout redessiner à chaque changement
 
 !SLIDE ============================
 
-#Janvier 2013 - 1ere directive
+#Janvier 2013 - 1ère directive
 
 ##"Je veux mettre à jour mon modèle quand je touche à ma vue !"
 
@@ -110,7 +123,7 @@ Tout redessiner à chaque changement
 
 !SLIDE ============================
 
-#Février 2013 - 2eme directive
+#Février 2013 - 2ème directive
 
 !SLIDE ============================
 
@@ -121,7 +134,7 @@ Tout redessiner à chaque changement
 
 !SLIDE ============================
 
-#Février 2013 - 3eme directive
+#Février 2013 - 3ème directive
 
 !SLIDE ============================
 
@@ -169,7 +182,7 @@ function() {
 
 #Conseils 1/2
 
-* manipuler le model et non la vue
+* manipuler le modèle et non la vue
 * tester, tester et re-tester
 * comprendre ce qui ce passe derrière (scope, ng-view, filter...)
 
