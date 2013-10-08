@@ -73,12 +73,12 @@ Mais quel framework JS choisir ?
 
 <i>Pour les newbies !</i>
 
-!SLIDE bullets ============================
+!SLIDE bullets small ============================
 
-* view = fichier html
-* controller = fichier js controllant la vue
-* service = fichier js, partagé entre plusieurs controllers/services
-* directive = fichier js, permettant d'écrire de nouvelles balises html
+* <span class="bigger red">vue</span> : fichier HTML
+* <span class="bigger red">contrôleur</span> : fichier JS contrôlant la vue
+* <span class="bigger red">service</span> : fichier JS, partagé entre plusieurs contrôleurs/services
+* <span class="bigger red">directive</span> : fichier JS, permettant d'écrire de nouvelles balises HTML
 
 !SLIDE ============================
 
@@ -147,13 +147,13 @@ Tout redessiner à chaque changement
 
 * On est en web-socket
 * Le web-socket est coupé derrière un proxy
-* On rajoute le Sse
+* On rajoute le SSE
 
 !SLIDE bullets ============================
 
 #Avril 2013 - NetworkService
 
-* Le Sse est coupé avec une mauvaise connexion (3G)
+* Le SSE est coupé avec une mauvaise connexion (3G)
 * On rajoute le long-polling
 * On vient de re-développer socket.io
 
@@ -190,8 +190,8 @@ function() {
 
 #Conseils 2/2
 
-* bien s'outiller (bower, karma, travis...)
-* ne pas hésiter à demander des conseils (frangular, monptellierjs...)
+* bien s'outiller (Bower, Karma, Travis...)
+* ne pas hésiter à demander des conseils (FrAngular.com, MontpellierJS...)
 
 !SLIDE =================
 
