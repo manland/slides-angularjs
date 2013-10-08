@@ -23,7 +23,9 @@ Il manque un tout petit truc sur le networkService et socket.io je vais voir où
 
 !SLIDE bullets ============================
 
-* Développeur depuis toujours (4 ans professionnellement)
+* Développeur depuis toujours 
+ * 4 ans professionnellement
+ * En poste chez ![](img/logo_itk.png)
 * Développeur web++
 * Développeur front++
 
@@ -80,7 +82,7 @@ Mais quel framework JS choisir ?
 * <span class="bigger red">service</span> : fichier JS, partagé entre plusieurs contrôleurs/services
 * <span class="bigger red">directive</span> : fichier JS, permettant d'écrire de nouvelles balises HTML
 
-!SLIDE ============================
+!SLIDE small ============================
 
 #Décembre 2012 - 1er code
 
@@ -88,13 +90,21 @@ Mais quel framework JS choisir ?
 
 !SLIDE bullets ============================
 
-* 1 view
-* 1 controller
+* 1 vue
+* 1 contrôleur
 * 1 service
 
 #1500 lignes de code
 
 <i>* Ce slide est sûrement un peu exagéré</i>
+
+!SLIDE ============================
+
+#Freeeeeeeze
+
+Tout dans le même scope<br />
+== <br />
+Boucle sur tous les éléments du scope
 
 !SLIDE ============================
 
@@ -104,19 +114,11 @@ Mais quel framework JS choisir ?
 
 !SLIDE ============================
 
-#Freeeeeeeze
-
-Tout dans le même scope<br />
-== <br />
-Tout redessiner à chaque changement
-
-!SLIDE ============================
-
 #Janvier 2013 - 1ère directive
 
 ##"Je veux mettre à jour mon modèle quand je touche à ma vue !"
 
-!SLIDE ============================
+!SLIDE small ============================
 
 ![](img/directiveScroll.png)
 ![](img/directiveScrollVue.png)
@@ -125,7 +127,7 @@ Tout redessiner à chaque changement
 
 #Février 2013 - 2ème directive
 
-!SLIDE ============================
+!SLIDE small ============================
 
 (vue sur frangular image)
 
@@ -136,7 +138,7 @@ Tout redessiner à chaque changement
 
 #Février 2013 - 3ème directive
 
-!SLIDE ============================
+!SLIDE small ============================
 
 ![](img/directivesDateTime.png)
 ![](img/directivesDateTimeVue.png)
@@ -163,18 +165,19 @@ Tout redessiner à chaque changement
 
 Oups où sont les tests ?
 
-!SLIDE bullets ============================
+!SLIDE bullets small ============================
 
 #Industrialisation
 
 * Nomenclature
 ```javascript
 function() {
-  function private() {}
+    function private() {}
 
-  return {
-    public: function() {private()}
-}
+    return {
+      public: function() {
+        private()
+}}}
 ```
 * Patterns
 

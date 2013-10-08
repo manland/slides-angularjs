@@ -231,6 +231,14 @@ body.blackBackground.all {
     padding: 25px;
     margin: 0;
 }
+.slide.bullets ul li ul{
+    padding: 10px 40px;
+}
+.slide.bullets ul li ul li{
+    font-size: 0.6em;
+    list-style: disc outside none;
+    padding: 10px;
+}
 .slide.bullets ol {
     font-size: 1.5em;
     text-align: left;
