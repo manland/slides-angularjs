@@ -35,23 +35,17 @@ Il manque un tout petit truc sur le networkService et socket.io je vais voir où
 
 ![](img/js13kgame.png)
 
-(image avec un projet froggies)
-
 (Re)Découverte du JS... en 13Ko
 
 !SLIDE ============================
 
 #Novembre 2012
 
-![](img/logo_skimbo.png)
-
-(image avec site + un projet froggies)
+![](img/logo_skimbo-url2.png)
 
 Mais quel framework JS choisir ?
 
 !SLIDE ============================
-
-(une image avec nuage)
 
 <center>
 <table>
@@ -110,7 +104,7 @@ Boucle sur tous les éléments du scope
 
 ##Courbe d'apprentissage
 
-![](img/logistique.jpg)
+![](img/logistique-v2.png)
 
 !SLIDE ============================
 
@@ -129,10 +123,7 @@ Boucle sur tous les éléments du scope
 
 !SLIDE small ============================
 
-(vue sur frangular image)
-
-![](img/directiveDrag.png)
-![](img/directiveDragVue.png)
+![](img/directiveDragVue-v2.png)
 
 !SLIDE ============================
 
