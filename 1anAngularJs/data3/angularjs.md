@@ -73,6 +73,7 @@ Mais quel framework JS choisir ?
 
 * <span class="bigger red">vue</span> : fichier HTML
 * <span class="bigger red">contrôleur</span> : fichier JS contrôlant la vue
+* <span class="bigger red">scope</span> : objet JS reliant la vue et le contrôleur
 * <span class="bigger red">service</span> : fichier JS, partagé entre plusieurs contrôleurs/services
 * <span class="bigger red">directive</span> : fichier JS, permettant d'écrire de nouvelles balises HTML
 
@@ -96,15 +97,9 @@ Mais quel framework JS choisir ?
 
 #Freeeeeeeze
 
-Tout dans le même scope<br />
-== <br />
-Boucle sur tous les éléments du scope
-
-!SLIDE ============================
-
-##Courbe d'apprentissage
-
-![](img/logistique-v2.png)
+<b>Tout dans le même scope</b><br />
+<b>==</b><br />
+<b>Boucle sur tous les éléments du scope</b>
 
 !SLIDE ============================
 
@@ -115,7 +110,8 @@ Boucle sur tous les éléments du scope
 !SLIDE small ============================
 
 ![](img/directiveScroll.png)
-![](img/directiveScrollVue.png)
+<img src="data3/img/directiveScrollCode.png" width="550px" />
+![](img/directiveScrollVue2.png)
 
 !SLIDE ============================
 
@@ -123,7 +119,7 @@ Boucle sur tous les éléments du scope
 
 !SLIDE small ============================
 
-![](img/directiveDragVue-v2.png)
+![](img/directiveDragVue-v3.png)
 
 !SLIDE ============================
 
@@ -132,7 +128,7 @@ Boucle sur tous les éléments du scope
 !SLIDE small ============================
 
 ![](img/directivesDateTime.png)
-![](img/directivesDateTimeVue.png)
+![](img/directivesDateTimeVue2.png)
 
 !SLIDE bullets ============================
 
@@ -152,33 +148,40 @@ Boucle sur tous les éléments du scope
 
 !SLIDE ============================
 
-#Mai 2013 - 1er (gros) rework
+##Mai 2013 - 1er (gros) rework
 
-Oups où sont les tests ?
+<b>Oups où sont les tests ?</b>
 
 !SLIDE bullets small ============================
 
 #Industrialisation
 
 * Nomenclature
+* Patterns
+
 ```javascript
 function() {
-    function private() {}
+    function myPrivateFunction() {}
 
     return {
-      public: function() {
-        private()
+      myPublicFunction: function() {
+        myPrivateFunction()
 }}}
 ```
-* Patterns
+
+!SLIDE ============================
+
+##Courbe d'apprentissage
+
+![](img/logistique-v2.png)
 
 !SLIDE bullets ============================
 
 #Conseils 1/2
 
 * manipuler le modèle et non la vue
-* tester, tester et re-tester
-* comprendre ce qui ce passe derrière (scope, ng-view, filter...)
+* tester, tester et re-tester : AngularJS fait pour ça, par ça
+* comprendre ce qu'il se passe derrière (scope, ng-view, filter...)
 
 !SLIDE bullets ============================
 

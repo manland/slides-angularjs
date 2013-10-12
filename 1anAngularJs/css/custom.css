@@ -56,3 +56,9 @@ quote {
     padding: 15px;
     font-size: 22px;
 }
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
