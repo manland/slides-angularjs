@@ -77,6 +77,30 @@ Mais quel framework JS choisir ?
 * <span class="bigger red">service</span> : fichier JS, partagé entre plusieurs contrôleurs/services
 * <span class="bigger red">directive</span> : fichier JS, permettant d'écrire de nouvelles balises HTML
 
+!SLIDE ============================
+
+![](img/secondscope_1.png)
+
+!SLIDE ============================
+
+![](img/secondscope_2.png)
+
+!SLIDE ============================
+
+![](img/secondscope_3.png)
+
+!SLIDE ============================
+
+![](img/secondscope_4.png)
+
+!SLIDE ============================
+
+![](img/secondscope_5.png)
+
+!SLIDE ============================
+
+![](img/secondscope_6.png)
+
 !SLIDE small ============================
 
 #Décembre 2012 - 1er code
@@ -102,6 +126,10 @@ Mais quel framework JS choisir ?
 <b>Tout dans le même scope</b><br />
 <b>==</b><br />
 <b>Boucle sur tous les éléments du scope</b>
+
+!SLIDE ============================
+
+![](img/multiplescope.png)
 
 !SLIDE ============================
 
