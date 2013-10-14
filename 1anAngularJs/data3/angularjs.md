@@ -97,6 +97,8 @@ Mais quel framework JS choisir ?
 
 #Freeeeeeeze
 
+![](img/snail2.gif)
+
 <b>Tout dans le même scope</b><br />
 <b>==</b><br />
 <b>Boucle sur tous les éléments du scope</b>
@@ -112,6 +114,7 @@ Mais quel framework JS choisir ?
 ![](img/directiveScroll.png)
 <img src="data3/img/directiveScrollCode.png" width="550px" />
 ![](img/directiveScrollVue2.png)
+#112 lignes de code
 
 !SLIDE ============================
 
@@ -120,6 +123,7 @@ Mais quel framework JS choisir ?
 !SLIDE small ============================
 
 ![](img/directiveDragVue-v3.png)
+#151 lignes de code
 
 !SLIDE ============================
 
@@ -129,6 +133,7 @@ Mais quel framework JS choisir ?
 
 ![](img/directivesDateTime.png)
 ![](img/directivesDateTimeVue2.png)
+#117 + 112 = 229 lignes de code
 
 !SLIDE bullets ============================
 
@@ -190,6 +195,15 @@ function() {
 * bien s'outiller (Bower, Karma, Travis...)
 * ne pas hésiter à demander des conseils (FrAngular.com, MontpellierJS...)
 
+!SLIDE bullets ============================
+
+#Les plus d'AngularJS
+
+* Facilité d'utilisation (JS)
+* Pas de <s>longue</s> compilation (GWT)
+* En pleine ébullition (Flex)
+* Séparation claire entre le client et le serveur (JSP, PHP)
+
 !SLIDE =================
 
 # Merci !
@@ -211,3 +225,5 @@ function() {
     </tbody>
   </table>
 </center>
+
+<i>Ce slide est réalisé en AngularJS !</i>
