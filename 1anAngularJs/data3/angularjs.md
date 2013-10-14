@@ -75,7 +75,7 @@ Mais quel framework JS choisir ?
 * <span class="bigger red">contrôleur</span> : fichier JS contrôlant la vue
 * <span class="bigger red">scope</span> : objet JS reliant la vue et le contrôleur
 * <span class="bigger red">service</span> : fichier JS, partagé entre plusieurs contrôleurs/services
-* <span class="bigger red">directive</span> : fichier JS, permettant d'écrire de nouveaux composants HTML (référence aux web-components)
+* <span class="bigger red">directive</span> : fichier JS, permettant d'écrire de nouveaux composants HTML
 
 !SLIDE ============================
 
