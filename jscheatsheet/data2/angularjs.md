@@ -52,11 +52,11 @@ var ClassName = (function() {
 
   //Constructeur
   function ClassName() {
-
+    this.attribut = 'romain';
   }
 
   ClassName.prototype.method = function() {
-
+    this.attribut = this.attribut + ' est cool :D';
   };
 }
 ```
