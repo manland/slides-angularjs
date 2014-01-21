@@ -350,3 +350,17 @@ Pas panique git nous dit tout !
 !SLIDE ============================
 
 ![](img/demo-git-continue.png)
+
+!SLIDE bullets ============================
+
+# Résumé
+
+* Pour le moment on peut faire le workflow simple
+* En h-day il serait bien de commencer à brancher
+* Idem, sur nos serveur de vm (1 branch par déploiement ?)
+
+!SLIDE =================
+
+# Merci !
+
+# Questions ? Débat ? Troll !
