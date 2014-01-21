@@ -13,11 +13,17 @@ Plan :
 
 !SLIDE ============================
 
-# GWT
+#GIT
 
-"La meilleure réalisation technique, de la plus mauvaise idée !"
+Licence Complete Bullshit
 
-<i>Avertissement, tous les trolls de ces slides sont en italique</i>
+Tout article ou image produite sous licence Complete Bullshit est reconnu d’inutilité publique. Tout y est ouvertement faux et scandaleusement mensonger, en général dans l’unique espoir d’aider à la LOLitude ambiante.
+
+![](img/completebullshit.jpg)
+
+Toute action en justice serait donc ridicule puisque ça ne me ferait pas plaisir, d’autant que cela n’est pas très gentil.
+
+<i><code>Avertissement, tous les trolls de ces slides sont en italique</code></i>
 
 !SLIDE ============================
 
@@ -25,9 +31,13 @@ Plan :
 
 <i>Et c'est pas en italique</i>
 
+![](img/buze.gif)
+
 !SLIDE ============================
 
 # GIT histoire
+
+![](img/history.gif)
 
 !SLIDE ============================
 
@@ -35,17 +45,23 @@ Plan :
 
 <i>Mais si tout est sur github où est la décentralisation ?</i>
 
+![](img/decentralization2.gif)
+
 !SLIDE ============================
 
 ## Pouvoir créer des branches plus facilement
 
 <i>Quand on sait dev on a pas besoin de branches !</i>
 
+![](img/decentralization.gif)
+
 !SLIDE ============================
 
 ## Pouvoir revenir à un état antérieur du code plus facilement
 
 <i>Quand on sait dev on a pas besoin de revenir en arrière !</i>
+
+![](img/back.gif)
 
 !SLIDE ============================
 
@@ -97,6 +113,8 @@ git clone repo.git
 
 Récupérer le code pour la première fois.
 
+![](img/clone.gif)
+
 !SLIDE ============================
 
 # Status
@@ -106,6 +124,8 @@ git status
 ```
 
 Voir où on en est localement : fichiers à commiter, pusher, déjà commités...
+
+![](img/statue.gif)
 
 !SLIDE small ============================
 
@@ -190,6 +210,8 @@ git pull --rebase
 
 Récupérer les fichiers distants et les merger dans notre repo local.
 
+![](img/pull.gif)
+
 !SLIDE ============================
 
 # Pull --rebase ??
@@ -198,11 +220,11 @@ Exemples...
 
 !SLIDE ============================
 
-# Dans menottes il y a...
+## Dans menottes il y a... 1 branche !
 
 ![](img/Sélection_175.png)
 
-# 1 branche !
+![](img/push.gif)
 
 !SLIDE ============================
 
@@ -230,6 +252,8 @@ Exemples...
 
 ![](img/Sélection_182.png)
 
+![](img/push-rebase.gif)
+
 !SLIDE ============================
 
 ![](img/Sélection_183.png)
@@ -245,6 +269,8 @@ Exemples...
 !SLIDE ============================
 
 # Nouveau workflow de travail
+
+![](img/arc-en-ciel.gif)
 
 !SLIDE ============================
 
@@ -269,6 +295,8 @@ git checkout mon_prenom
 
 # En détail
 
+![](img/zoom.gif)
+
 !SLIDE ============================
 
 ```
@@ -280,10 +308,12 @@ Créer une branche `nom_prenom` (-b) et nous place dedans.
 !SLIDE ============================
 
 ```
-git pull origin master
+git pull --rebase origin master
 ```
 
-Récupère le code distant de la branche `master`.
+Récupère proprement le code distant de la branche `master`.
+
+![](img/origin.gif)
 
 !SLIDE ============================
 
@@ -307,11 +337,13 @@ Nous place dans la branche `master`.
 
 Pas panique git nous dit tout !
 
+![](img/t6.gif)
+
 !SLIDE ============================
 
 ![](img/demo-git-pull.png)
 
-!SLIDE ============================
+!SLIDE smaller bullets ============================
 
 ![](img/demo-in-code.png)
 

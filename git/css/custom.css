@@ -56,3 +56,14 @@ quote {
     padding: 15px;
     font-size: 22px;
 }
+
+img {
+    max-width: 80%;
+    max-height: 90%;
+}
+
+p code {
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
