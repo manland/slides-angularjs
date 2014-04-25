@@ -133,7 +133,10 @@ public class Plot implements Serializable {
 #Les points forts et faibles dépendent du point de vue !
 
 ```json
-TODO : ADD SERIALIZATION EXEMPLE
+//OK[167,4.58444546972656,7,48.844317572283,
+["java.util.ArrayList/4159755760",
+"com.itkweb.devin.model.overview.PlotOverview/3902952073",
+"java.lang.Integer/3438268394"]
 ```
 
 <i>Culture-G : Pourquoi Google à fait ça ?</i>
@@ -177,7 +180,16 @@ public interface PlotsRequest extends RequestContext {
 #Controller - Implémentation
 
 ```java
-//TODO check implementation style
+public class PlotsControllerImpl extends RemoteServiceServlet implements PlotsController {
+
+  @Autowire
+  PlotsService plotsService;
+
+  public List<Plot> getPlots(Integer idUser) {
+    return plotsService.getPlots(idUser);
+  }
+
+}
 ```
 
 !SLIDE ============================
@@ -386,7 +398,50 @@ public String getColor() {
 
 #Activity/View/ViewImpl/ui.xml : où on met quoi ?
 
-//TODO prendre du trac dispeau
+Ce patron de conception permet de mieux structurer votre code. Tout du moins dans la partie cliente de votre application.
+Model View Presenter
+
+* Le modèle, pour pouvoir remplir vos vues
+* La vue, pour les afficher
+* Le présenteur, attardons nous un peu là dessus 
+
+Contrairement au contrôleur du pattern MVC, le présenter n'est pas là, que, pour contrôler la data. En effet, il permet de définir comment la vue réagit. Son but est de :
+
+* donner la bonne donnée à la vue, s'il le faut il va la chercher sur le serveur, la filtre, la trie
+* récupérer la donnée de la vue pour... l'enregistrer sur un serveur...
+* mais aussi et surtout de démarrer la vue dans son contexte (par la méthode start)
+* de définir ce qu'il se passe lorsque l'on interagit avec la vue (clic sur un bouton, déplacement par d&d...) 
+
+Tout ceci est fait pour découper proprement notre code, éviter des classes à rallongent qui font tout et surtout n'importe quoi ;)
+Bonne pratique
+
+Les bonnes pratiques veulent que nous ne lions pas directement une vue avec son présenter. Pour cela nous utilisons une référence vers une interface.
+
+Ainsi nous pouvons ajouter autant de présenter que nous souhaitons à notre vue, pensez à notre Popup des pattern événement et injection de dépendance. De même, un présenter peut dans un cas afficher la data sous forme de liste et dans l'autre cas sous forme de carte géographique.
+En pratique
+
+Comme à son habitude, GWT à tout prévu pour nous. Un presenter, est appelé Activity dans le monde de GWT.
+
+Pour plus de facilité de lecture, nous (chez ITK) avons l'habitude de mettre dans la même interface les signatures de méthodes de la Vue et du Présenter.
+
+```java
+public interface View {
+
+   public interface Presenter {
+      void onClick();
+   }
+
+   void fillData(Data data);
+   Data getData();
+
+}
+```
+
+Idéalement la vue, n'est qu'une succession de petites méthodes permettant de définir l’emplacement et le style de la vue. Elle ne doit pas du tout s'occuper de callback, d'appel serveur, de filtre sur la donnée...
+En vrai pratique
+
+Depuis que GWT permet de créer des ui.xml, des fichiers xml contenant exactement ce que devrait faire la vue du MVP nous avons tendance à déporter du code du contrôleur vers la classe de la vue (sœur du ui.xml) ! En effet, griser un bouton tant qu'une condition n'est pas respectée (par exemple un champ non vide), était au par avant géré par le présenter. Mais pour éviter que le code du présenter soit trop gros, et que le code de la vue (de la classe pas du ui.xml) nous préférons déplacer ces petites parties uniquement visuelles.
+
 
 !SLIDE ============================
 
