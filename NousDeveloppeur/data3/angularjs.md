@@ -146,7 +146,7 @@ Gif pas toujours animé, pas toujours drôle, pas toujours en relation
 
 # Qu'est-ce qu'un développeur ?
 
-![](img/on-the-internet-nobody-knows-youre-a-dog.jpg)
+![](img/hatehaters.gif)
 
 *Mais aussi js-what, ng-what, troll, habits, licornes...*
 
@@ -198,10 +198,6 @@ Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
 
 # Notre vision de l'entreprise
 
-![](img/twitter_example.png)
-
-*Entre dev ça se passe comme ça*
-
 ## Attention trolls gratuits
 
 !SLIDE smaller ============================
@@ -218,7 +214,7 @@ Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
 
 !SLIDE smaller ============================
 
-![](img/Strip-Définition-métiers-650-final.jpg)
+![](img/Strip-Définition-métiers-651.jpg)
 
 !SLIDE small ============================
 
@@ -264,7 +260,7 @@ Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
 
 # Différents types de développeurs
 
-* web / natif
+* web / natif / mobile
 * front / back
 * sysadmin / devops / dba
 
@@ -280,7 +276,7 @@ Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
 
 # Un métier pas comme les autres
 
-![](img/ooopsAgain.gif)
+![](img/logicfail1.gif)
 
 *Tout le temps en échec, besoin de re-faire et de ré-apprendre*
 
@@ -362,15 +358,16 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 *Sécurité : "vaut-il mieux que quelqu'un nous fasse la remarque ou ne jamais savoir et quelqu'un en profite ?" (windows virus vs linux virus)*
 
-!SLIDE small bullets ============================
+!SLIDE small bullets smaller ============================
 
 # OpenSource : Pourquoi devrions-nous en faire ?
 
 * Attire les autres devs
 * Ce que tu sèmes tu recevras (IntelliJ)
-* Qualité ++ : si on partage on ne veut pas passer pour des nuls
-  * on fait attention que ce soit propre
-  * on documente pour les autres
+* Qualité : si on partage on ne veut pas passer pour des nuls
+* Qualité + : on fait attention que ce soit propre
+* Qualité ++ : on test pour les autres
+* Qualité +++ : on documente pour les autres
 
 !SLIDE small ============================
 
@@ -382,7 +379,7 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 !SLIDE smaller ============================
 
-# OpenSource : licences faites votre marché
+# Licences faites votre marché
 
 ![](img/open-source-licences.png)
 
@@ -406,7 +403,7 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 # OpenSource : comment se payent-ils ?
 
-!SLIDE small ============================
+!SLIDE smaller ============================
 
 # OpenSource : quoi qu'on open-source ?
 
@@ -418,9 +415,11 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 # OpenSource : qu'utilisons-nous
 
+![](img/openvsproprietary.jpg)
+
 *d'opensource ? AngularJs, Spring, Hibernate, Postgresql, Cassandra, Eclipse, Brackets, Yoga, Firefox, Ubuntu, Debian, Tomcat, Maven, Npm, Gulp...*
 
-*de propriétaire ? Windows, VmWare, IntelliJ (semi), Matlab, Photoshop*
+*de propriétaire ? Windows, VmWare, IntelliJ (semi), SublimeText (semi), Chrome (semi ium), Matlab, Photoshop*
 
 !SLIDE small ============================
 
@@ -428,7 +427,125 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 # Exemple 1ere pull-request d'ITK
 
-IMAGE ITK LOVE OPEN-SOURCE
+[![](img/itk-love-pull-request.jpg)](https://github.com/skyscreamer/yoga/compare/master...itkSource:JsonAliasesFeature?expand=1)
+
+!SLIDE small bullets ============================
+
+This pull-request want to simplify the definitions of aliases.
+
+Here at [ITK](http://www.itkweb.com/) we use intensively aliases, with time our aliases.properties grownth exponentially. Lot of patterns are similare but with little changes.
+
+So we have implemented a json parser, and we have added variable feature.
+
+Specifications :
+
+ * the `yoga_aliases` directory in `ressources` directory contain the definitions in multiple files ending by json
+ * a file can have multiple aliases and/or multiple variables
+ * a file contain a single json object
+ * the property of this object must have name start by `$` for aliase and `@` for variable
+ * the value of each property is an array
+ * each array can contain string for local value, or object for child value
+
+Examples (from tests) :
+
+from
+
+```java
+$child=test,child(value)
+```
+
+to
+
+```json
+{
+  "$child": [
+    "test",
+    {
+      "child": ["value"]
+    }
+  ]
+}
+```
+
+Or from
+
+```java
+$children=test,child(value,value2),child2(value3,child3(*))
+```
+
+to
+
+```json
+{
+  "$children": [
+    "test",
+    {
+      "child" : [
+        "value", 
+        "value2"
+      ]
+    },
+    {
+      "child2": [
+        "value3", 
+        {
+          "child3": ["*"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+And with variables :
+
+```json
+{
+  "@variable": [
+    "test", 
+    "test2"
+  ],
+  "$variable": [
+    "testvar",
+    {
+      "childvar": [
+        "child",
+        "@variable"
+      ]
+    }
+  ]
+}
+```
+
+Could be represented as :
+
+```java
+$variable=testvar,childvar(child,test,test2)
+```
+
+More complexe variables can be used.
+
+**The JSON files must be in `yoga_aliases` directory in the ressources directory.**
+
+It can contain all files you want, the name of file is not used, but its need to finish by .json.
+
+We use a file, for a view in our application, and each file contain all requests aliases for this view.
+
+A variable can be defined in one file and used in other. And a file can be contain only aliase or only variable, its as you want.
+
+To resume :
+
+ * src/main/ressources/yoga_aliases
+   * view1.json 
+     * alias1
+       * childName
+       * use variable2
+     * alias2
+       * use variable1
+   * mainVariables.json
+     * definition of variable1
+   * view2.json
+     * definition of variable2
 
 !SLIDE small ============================
 
@@ -448,7 +565,7 @@ IMAGE ITK LOVE OPEN-SOURCE
 
 # Pourrait-on faire plus d'OpenSource à ITK ? 
 
-## Proposition : commité (de dev) plutôt que de demander à des gens qui connaissent rien et qui ont pleins d'autres choses à faire ?
+## Proposition : commité (de dev) pour décider sur de toutes petites choses, et faire remonter pour les plus grosses ?
 
 !SLIDE small ============================
 
