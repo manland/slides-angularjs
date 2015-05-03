@@ -1,0 +1,115 @@
+This pull-request wants to simplify the definitions of aliases.
+
+Here at [ITK](http://www.itkweb.com/) we use intensively aliases, with time our aliases.properties grownth exponentially. Lots of patterns are similare but with little changes.
+
+So we have implemented a json parser, and we have added variable feature.
+
+Specifications :
+
+ * the `yoga_aliases` directory in `ressources` directory contains the definitions in multiple files ending by json
+ * a file can have multiple aliases and/or multiple variables
+ * a file contains a single json object
+ * the property of this object must have its name starts by `$` for aliase and `@` for variable
+ * the value of each property is an array
+ * each array can contain string for local value, or object for child value
+
+Examples (from tests) :
+
+from
+
+```java
+$child=test,child(value)
+```
+
+to
+
+```json
+{
+  "$child": [
+    "test",
+    {
+      "child": ["value"]
+    }
+  ]
+}
+```
+
+Or from
+
+```java
+$children=test,child(value,value2),child2(value3,child3(*))
+```
+
+to
+
+```json
+{
+  "$children": [
+    "test",
+    {
+      "child" : [
+        "value", 
+        "value2"
+      ]
+    },
+    {
+      "child2": [
+        "value3", 
+        {
+          "child3": ["*"]
+        }
+      ]
+    }
+  ]
+}
+```
+
+And with variables :
+
+```json
+{
+  "@variable": [
+    "test", 
+    "test2"
+  ],
+  "$variable": [
+    "testvar",
+    {
+      "childvar": [
+        "child",
+        "@variable"
+      ]
+    }
+  ]
+}
+```
+
+Could be represented as :
+
+```java
+$variable=testvar,childvar(child,test,test2)
+```
+
+More complex variables can be used.
+
+**The JSON files must be in `yoga_aliases` directory in the ressources directory.**
+
+It can contain all files you want, the name of file is not used, but it needs to finish by .json.
+
+We use a file, for a view in our application, and each file contains all requests aliases for this view.
+
+A variable can be defined in one file and used in an other one. And a file can contain only aliases or only variables, it's as you want.
+
+To resume :
+
+ * src/main/ressources/yoga_aliases
+   * view1.json 
+     * alias1
+       * childName
+       * use variable2
+     * alias2
+       * use variable1
+   * mainVariables.json
+     * definition of variable1
+   * view2.json
+     * definition of variable2
