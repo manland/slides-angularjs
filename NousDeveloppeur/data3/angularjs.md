@@ -84,7 +84,7 @@ Plan :
 
 ![](img/supermoi.jpg)
 
-*Les propos ne concerne que moi et comme vous le savez ~~ou pas~~ je ne suis pas ~~toujours~~ de bonne foie, enfin les sources sont plus que douteuses... Vérifiez, réfutez, bref alimentez le débat !*
+*Les propos ne concerne que moi et comme vous le savez ~~ou pas~~ je ne suis pas ~~toujours~~ de bonne foi, enfin les sources sont plus que douteuses... Vérifiez, réfutez, bref alimentez le débat !*
 
 !SLIDE ============================
 
@@ -132,7 +132,7 @@ Gif pas toujours animé, pas toujours drôle, pas toujours en relation
 
 ![](img/shareKnowledge.gif)
 
-*Partage, github, enseignement, mooc*
+*Partage, Github, enseignement, mooc*
 
 !SLIDE small ============================
 
@@ -173,7 +173,7 @@ Gif pas toujours animé, pas toujours drôle, pas toujours en relation
 ## On ne demande pas à un 
 
 * chirurgien de soigner un rhume... 
-* un mécanicien de repreindre sa carosserie...
+* un mécanicien de repeindre sa carrosserie...
 * un pilote d'avion, de conduire sa voiture...
 
 Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
@@ -292,7 +292,7 @@ Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
 
 # Un métier pas comme les autres
 
-* pas réinventé la roue
+* pas réinventer la roue
 * pas de mise en prod un vendredi
 * tester c'est douter
 * moins de ligne moins de bug
@@ -312,7 +312,7 @@ Oui, oui même s'il sait le faire... Et en particulier le dimanche en famille !
 
 ![](img/typical-mmo-development3.png)
 
-*Une maison avec tuyoterie sur le toit et les wc à l'extérieur...*
+*Une maison avec tuyauterie sur le toit et les wc à l'extérieur...*
 
 !SLIDE small ============================
 
@@ -366,7 +366,7 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 * Ce que tu sèmes tu recevras (IntelliJ)
 * Qualité : si on partage on ne veut pas passer pour des nuls
 * Qualité + : on fait attention que ce soit propre
-* Qualité ++ : on test pour les autres
+* Qualité ++ : on teste pour les autres
 * Qualité +++ : on documente pour les autres
 
 !SLIDE small ============================
@@ -375,7 +375,7 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 *Gratuit != OpenSource : tout ce qui est gratuit n'a pas de valeur, ou tout ce qui n'a pas de valeur devrait être gratuit ?*
 
-*Si tu es le meilleurs, tu peux donner des miettes aux autres*
+*Si tu es le meilleur, tu peux donner des miettes aux autres*
 
 !SLIDE smaller ============================
 
@@ -431,18 +431,18 @@ Très peu de développement pour les autres développeurs mais pour des utilisat
 
 !SLIDE small bullets ============================
 
-This pull-request want to simplify the definitions of aliases.
+This pull-request wants to simplify the definitions of aliases.
 
-Here at [ITK](http://www.itkweb.com/) we use intensively aliases, with time our aliases.properties grownth exponentially. Lot of patterns are similare but with little changes.
+Here at [ITK](http://www.itkweb.com/) we use intensively aliases, with time our aliases.properties grownth exponentially. Lots of patterns are similare but with little changes.
 
 So we have implemented a json parser, and we have added variable feature.
 
 Specifications :
 
- * the `yoga_aliases` directory in `ressources` directory contain the definitions in multiple files ending by json
+ * the `yoga_aliases` directory in `ressources` directory contains the definitions in multiple files ending by json
  * a file can have multiple aliases and/or multiple variables
- * a file contain a single json object
- * the property of this object must have name start by `$` for aliase and `@` for variable
+ * a file contains a single json object
+ * the property of this object must have its name starts by `$` for aliase and `@` for variable
  * the value of each property is an array
  * each array can contain string for local value, or object for child value
 
@@ -523,15 +523,15 @@ Could be represented as :
 $variable=testvar,childvar(child,test,test2)
 ```
 
-More complexe variables can be used.
+More complex variables can be used.
 
 **The JSON files must be in `yoga_aliases` directory in the ressources directory.**
 
-It can contain all files you want, the name of file is not used, but its need to finish by .json.
+It can contain all files you want, the name of file is not used, but it needs to finish by .json.
 
-We use a file, for a view in our application, and each file contain all requests aliases for this view.
+We use a file, for a view in our application, and each file contains all requests aliases for this view.
 
-A variable can be defined in one file and used in other. And a file can be contain only aliase or only variable, its as you want.
+A variable can be defined in one file and used in an other one. And a file can contain only aliases or only variables, it's as you want.
 
 To resume :
 
@@ -559,13 +559,13 @@ To resume :
 
 ![](img/cryPixard.gif)
 
-*Pardonnez-nous d'être aussi ~~con~~ ~~gamin~~ frustrant, en réalité nous sommes juste passionnés ;)*
+*Pardonnez-nous d'être aussi ~~cons~~ ~~gamins~~ frustrants, en réalité nous sommes juste passionnés ;)*
 
 !SLIDE small ============================
 
 # Pourrait-on faire plus d'OpenSource à ITK ? 
 
-## Proposition : commité (de dev) pour décider sur de toutes petites choses, et faire remonter pour les plus grosses ?
+## Proposition : comité (de devs) pour décider sur de toutes petites choses, et faire remonter pour les plus grosses ?
 
 !SLIDE small ============================
 
