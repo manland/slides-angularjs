@@ -33,7 +33,7 @@ Plan :
 
 ![](img/arc-en-ciel.gif)
 
-*Il n'y a que 2 types de languages, ceux qu'on critique tout le temps, et ceux dont on ne parle pas !*
+*Il n'y a que 2 types de langages, ceux qu'on critique tout le temps, et ceux dont on ne parle pas !*
 
 !SLIDE bullets ============================
 
@@ -45,9 +45,19 @@ Plan :
 * 3 ans d'Angular 1, *Fait notable : à propulser ITK de GWT à AngularJs*
 * 2 mois d'Angular 2... *Pour s'amuser*
 
+!SLIDE small ============================
+
+### (co)créateur de Kyu
+
+![](img/kyu.png)
+
+*Fermé mais peut être open-sourcé, peut être compatible ES6... Follow @KyuProject pour des news*
+
 !SLIDE ============================
 
 # Pourquoi tout changer ?
+
+![](img/AngularJS.png)
 
 !SLIDE bullets smaller ============================
 
@@ -72,30 +82,42 @@ Plan :
 
 # Réunion de crise chez Google
 
-IMAGE POWER R
+![](img/prmeeting.jpeg)
 
 !SLIDE small bullets ============================
 
-# Un meilleurs monde
+# Un meilleur monde
 
-On garde les même concepts mais on refait mieux
+On garde les mêmes concepts mais on refait mieux
 
-* Un framework JS qui permet de tester facilement
-* Qui comprend tout ce dont on a besoin pour faire une SPA (DI, router, call http...)
-* Qui est le moins intrusif possible (pas de MyFramework.model(['id', 'name']))
+* Tester c'est douter
+* SPA proof : DI, router, call http...
+* Non intrusif ~~MyFramework.model(['id', 'name'])~~
 
-!SLIDE small ============================
+!SLIDE bullets ============================
 
-# Ok mais si on refait, on fait bien
+# Language agnostique
 
-Découplage au maximum de tout
+* Écrit en Typescript (ES6)
+* Généré en Dart, ES5 et ES6
+* Utilisable en Typescript (ES6 et ES5), Dart, ES5 et ES6
+
+!SLIDE ============================
+
+## Angular2 est en version alpha 31
+
+![](img/disclaimer.jpeg)
+
+*Tout ce que vous allez voir peut et va changer !*
+
+*Pour faire ces slides je me suis basé sur : ~~la doc~~, ~~les articles des devs~~, les sources, **le gitter (chat)***
 
 !SLIDE small ============================
 
 # Nouveau templating
 
 ```html
-<div ng-for="provider in providers" ng-class="provider.classes">
+<div ng-repeat="provider in providers" ng-class="provider.classes">
     <img ng-if="provider.name" src="{{provider.name}}.png">
     <p ng-click="providerClick(provider)">{{provider.name}}</p>
 </div>
@@ -124,14 +146,198 @@ Découplage au maximum de tout
 
 # Zones.js : aurevoir $digest, $apply, $asyncApply, $timeout...
 
-!SLIDE small ============================
+!SLIDE ============================
 
-# Typescript
+![](img/ts2.png)
+
+!SLIDE bullets small ============================
+
+# Pourquoi ?
+
+* Existe depuis 2012 === stable
+* Surcouche === tout code JS est compatible TS
+* Transpiler ES6 + annotations === aurevoir AT Script
+* Communauté + outils (TSD) === facile d'utilisation
 
 !SLIDE small ============================
 
 # On veut voir du code !
 
+```javascript
+const quote = `"`;
+const ES6 = {
+  backquote: `is the new ${quote}`,
+  let: `is the new var !`,
+  classs: `is the new function !`,
+  arrow_function: () => {`is the life !`}
+}
+
+interface TS {
+  type: string;
+  generic: string;
+}
+const ts: TS = {
+  type: `my type`,
+  generic: `Array<TS>`
+}
+```
+
 !SLIDE small ============================
 
+## AngularJs 1 : controller
+
+```javascript
+var app = angular.module('app', []);
+
+app.factory('service', function() {
+
+  var users = [];
+
+  return {
+    getUsers: function() { return users; },
+    addUser: function(user) { users.push(user); }
+  };
+
+});
+
+app.controller('controller', ['service', function(service) {
+
+  this.users = service.getUsers();
+
+  this.user = {};
+
+  this.addUser = function() {
+    service.addUser(this.user);
+  }.bind(this);
+
+});
+```
+
+!SLIDE ============================
+
+## AngularJs 1 : controller
+
+```html
+<html>
+  <head>...</head>
+  <body ng-app="app">
+    <div ng-controller="controller as ctrl">
+      <ul>
+        <li ng-repeat="u in ctrl.users">{{u.name}}</li>
+      </ul>
+      <form>
+        ...
+        <button ng-click="ctrl.addUser()">
+      </form>
+    </div>
+  </body>
+</html>
+```
+!SLIDE smaller ============================
+
+# AngularJs 2
+
+![](img/Angular-2.png)
+
+*Code non fonctionnel (inject)*
+
+!SLIDE smaller ============================
+
+```javascript
+import {Injectable, Inject, Component, View, bootstrap, NgFor} from 'angular2/angular2';
+
+class User {
+  name: string;
+}
+
+@Injectable
+class Service {
+
+  users: Array<User> = [];
+
+  getUsers(): Array<User> { return this.users; },
+  addUser(user: User) { this.users.push(user); }
+
+}
+
+@Component({
+    selector: 'user-component'
+})
+@View({
+    templateUrl: 'UserComponent.html',
+    directives: [NgFor]
+})
+class UserComponent {
+  service: Service;
+  users: Array<User>;
+  user: User;
+
+  constructor(@Inject service: Service) {
+    this.service = service;
+    this.users = service.getUsers();
+    this.user = new User();
+  }
+
+  addUser() {
+    this.service.addUser(this.user);
+  }
+}
+
+bootstrap(MyAppComponent);
+```
+
+!SLIDE ============================
+
+## AngularJs 2
+
+```html
+<ul>
+  <li *ng-for="#u of users">{{u.name}}</li>
+</ul>
+<form>
+  ...
+  <button (click)="addUser()">
+</form>
+```
+
+!SLIDE ============================
+
+## AngularJs 2
+
+```html
+<html>
+  <head>...</head>
+  <body>
+
+    <user-component></user-component>
+
+  </body>
+</html>
+```
+
+!SLIDE ============================
+
+# Comment je range tout ça ?
+
+*Proposition*
+
+!SLIDE ============================
+
+![](img/architecture.png)
+
+!SLIDE bullets smaller ============================
+
 # Que faire de nos applis Angular 1 ?
+
+* ~~Les jetter~~
+* ~~Ne rien faire et changer de boite dans 6 mois~~
+* Philosophie 0 controller (article itk-labs très bientôt)
+* Passer à Typescript
+* Mimic angular 2
+* Passer à ES6
+
+!SLIDE bullets smaller ============================
+
+# Et vous qu'allez vous faire ?
+
+![](img/Apéro-Time-716x398.jpg)
